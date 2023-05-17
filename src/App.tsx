@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -8,6 +9,15 @@ function App() {
         <h3>
           NanoERP
         </h3>
+
+        <ul className="navbar-links">
+          <li>
+            <Link to="/">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/rooms">Rooms</Link>
+          </li>
+        </ul>
       </nav>
 
       <Outlet />

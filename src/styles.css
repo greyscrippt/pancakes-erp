@@ -3,9 +3,17 @@ body {
 }
 
 .navbar {
-    position: absolute;
+    display: flex;
     width: 100vw;
     height: auto;
     padding: 5px;
     background-color: seagreen;
+}
+
+.navbar-links {
+    display: flex;
+}
+
+.navbar-links li {
+    margin: 15px;
 }
