@@ -1,0 +1,4 @@
+## Application
+- [ ] Navbar
+- [ ] Routing
+- [ ] Styling
