@@ -1,16 +1,17 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import './styles.css'
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Home</div>
-  },
-]);
+import { Outlet } from "react-router-dom";
+import "./styles.css";
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <div>
+      <nav className="navbar">
+        <h3>
+          NanoERP
+        </h3>
+      </nav>
+
+      <Outlet />
+    </div>
   )
 }
 
