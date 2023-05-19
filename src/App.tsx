@@ -1,22 +1,31 @@
 import { Outlet } from "react-router-dom";
 import "./styles.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
 function App() {
   return (
     <div>
       <nav className="navbar">
-        <h3>
+        <Typography variant="h4" sx={{ alignSelf: "center" }}>
           NanoERP
-        </h3>
+        </Typography>
 
         <ul className="navbar-links">
           <li>
-            <Link to="/">Dashboard</Link>
+            <Link className="navbar-link" to="/">
+              <Button variant="contained">
+                Dashboard
+              </Button>
+            </Link>
           </li>
           <li>
-            <Link to="/rooms">Rooms</Link>
+            <Link className="navbar-link" to="/rooms">
+              <Button variant="contained">
+                Rooms
+              </Button>
+            </Link>
           </li>
         </ul>
       </nav>

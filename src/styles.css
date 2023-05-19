@@ -22,8 +22,14 @@ body {
     display: flex;
 }
 
+.navbar-link {
+    text-decoration: none;
+    color: black;
+}
+
 .navbar-links li {
     margin: 15px;
+    list-style-type: none;
 }
 
 .page-head {
