@@ -1,4 +1,3 @@
-import Paper from "@mui/material/Paper";
 import UserType from "../types/UserType";
 
 import "../styles.css";

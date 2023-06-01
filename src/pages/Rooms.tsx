@@ -2,7 +2,6 @@ import FormControl from "@mui/material/FormControl";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
 import { useState } from "react";
@@ -43,7 +42,7 @@ function Rooms() {
     const [ add_room_popup, toggle_add_room_popup ]     = useState(false);
 
     const handle_add_room_popup_submit  = () => {
-        set_rooms( (prev_rooms: any) => ([...prev_rooms, dummy_room]));
+        set_rooms( (prev_rooms: boolean) => ([...prev_rooms, dummy_room]));
         toggle_add_room_popup( () => false );
     };
     

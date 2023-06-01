@@ -8,8 +8,8 @@ import TableRow from "@mui/material/TableRow";
 
 interface DataTableProps {
   data: {
-    headers: Array<any>,
-    body: Array<Array<any>>,
+    headers: Array<string>,
+    body: Array<Array<string>>,
   },
 }
 
@@ -19,15 +19,15 @@ export default function DataTable(props: DataTableProps) {
       <Table size="small">
         <TableHead>
             <TableRow>
-              {props.data.headers.map((item: any, index: number) => <TableCell key={index}>{item}</TableCell>)}
+              {props.data.headers.map((item: string, index: number) => <TableCell key={index}>{item}</TableCell>)}
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.data.body.map((item1: Array<Array<any>>, index1: number) => {
+            {props.data.body.map((item1: Array<Array<string>>, index1: number) => {
               return(
                 <TableRow key={index1} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                   {
-                    item1.map((item2: Array<any>, index2: number) => {
+                    item1.map((item2: Array<string>, index2: number) => {
                       if (index2 == 0)
                           return <TableCell key={index2} component="th" scope="row">{item2.toString()}</TableCell>
 
