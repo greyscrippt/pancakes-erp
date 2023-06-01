@@ -3,32 +3,20 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
-
-import { useState } from "react";
 import TextField from "@mui/material/TextField";
 
-import "../styles.css";
+import { useState } from "react";
+
 import DataTable from "../components/DataTable";
 
-interface Room {
-    name: string;
-    capacity: number;
-    isOccupied: boolean;
-    location: string;
-    createdBy: string;
-    createdAt: Date;
-    updatedAt: Date;
-}
+import RoomType from "../types/RoomType";
 
-function format_data_for_datatable(rooms: Array<Room>) {
-  return {
-    headers: ["Name", "Capacity", "Occupied", "Location"],
-    body: rooms.map((room: Room) => [room.name, room.capacity, (room.isOccupied) ? "Yes" : "No", room.location]),
-  }
-}
+import { format_rooms_for_datatable } from "../utils/utils";
+
+import "../styles.css";
 
 function Rooms() {
-    const dummy_room: Room = {
+    const dummy_room: RoomType = {
         name: "Maquis I",
         capacity: 10,
         isOccupied: true,
@@ -106,7 +94,7 @@ function Rooms() {
                 </Box>
             </Modal>
 
-            <DataTable data={ format_data_for_datatable(rooms) }/>
+            <DataTable data={ format_rooms_for_datatable(rooms) }/>
         </div>
     );
 } export default Rooms;
