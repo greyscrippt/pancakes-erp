@@ -1,7 +1,5 @@
 import Typography from "@mui/material/Typography";
 
-import { useState } from "react";
-
 import DataTable from "../../components/DataTable";
 
 import RoomType from "../../types/RoomType";
