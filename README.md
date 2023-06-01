@@ -1,4 +1,6 @@
-# NanoERP
+# Pancakes ERP
+
+Software for managing lodging businesses.
 
 ## To-Do
 
