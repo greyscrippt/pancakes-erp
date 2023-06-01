@@ -5,6 +5,7 @@ import App from './App.tsx'
 import './styles.css'
 import Dashboard from './pages/Dashboard.tsx'
 import Rooms from './pages/Rooms.tsx'
+import Users from './pages/Users.tsx'
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,11 @@ const router = createBrowserRouter([
       {
         path: "/rooms",
         element: <Rooms />
-      }
+      },
+      {
+        path: "/users",
+        element: <Users />
+      },
     ]
   },
 ]);

@@ -48,7 +48,7 @@ function Rooms() {
     };
     
     return (
-        <Paper className="page">
+        <div className="page">
             <Typography variant="h4">Rooms</Typography>
 
             <Button
@@ -108,6 +108,6 @@ function Rooms() {
             </Modal>
             
             <DataTable data={ format_data_for_datatable(rooms) }/>
-        </Paper>
+        </div>
     );
 } export default Rooms;

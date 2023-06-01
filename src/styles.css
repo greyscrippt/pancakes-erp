@@ -2,11 +2,14 @@ body {
     margin: 0;
 }
 
+.master-container {
+  height: 80vh;
+}
+
 .page {
     height: 100%;
-    margin: 30px;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 0;
     background-color: beige;
 }
 
