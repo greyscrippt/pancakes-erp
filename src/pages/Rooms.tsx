@@ -22,8 +22,8 @@ interface Room {
 
 function format_data_for_datatable(rooms: Array<Room>) {
   return {
-    headers: ["Name", "Capacity", "Is Occupied", "Location"],
-    body: rooms.map((room: Room) => [room.name, room.capacity, room.isOccupied, room.location]),
+    headers: ["Name", "Capacity", "Occupied", "Location"],
+    body: rooms.map((room: Room) => [room.name, room.capacity, (room.isOccupied) ? "Yes" : "No", room.location]),
   }
 }
 
@@ -45,7 +45,7 @@ function Rooms() {
         set_rooms( (prev_rooms: boolean) => ([...prev_rooms, dummy_room]));
         toggle_add_room_popup( () => false );
     };
-    
+
     return (
         <div className="page">
             <Typography variant="h4">Rooms</Typography>
@@ -68,7 +68,7 @@ function Rooms() {
                           >
                           Create new room
                         </Typography>
-                        
+
                         <TextField
                           required
                           type="text"
@@ -76,7 +76,7 @@ function Rooms() {
                           label="Name"
                           className="creator-modal-input"
                           />
-                        
+
                         <TextField
                           required
                           type="number"
@@ -84,7 +84,7 @@ function Rooms() {
                           label="Capacity"
                           className="creator-modal-input"
                           />
-                        
+
                         <Button
                           className="creator-modal-input"
                           color="primary"
@@ -93,7 +93,7 @@ function Rooms() {
                           >
                           Create
                         </Button>
-                        
+
                         <Button
                           className="creator-modal-input"
                           color="secondary"
@@ -105,7 +105,7 @@ function Rooms() {
                     </FormControl>
                 </Box>
             </Modal>
-            
+
             <DataTable data={ format_data_for_datatable(rooms) }/>
         </div>
     );
