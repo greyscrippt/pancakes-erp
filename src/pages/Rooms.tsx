@@ -3,18 +3,13 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import Paper from "@mui/material/Paper";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
 import Typography from "@mui/material/Typography";
 
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 
 import "../styles.css";
+import DataTable from "../components/DataTable";
 
 interface Room {
     name: string;
@@ -24,6 +19,13 @@ interface Room {
     createdBy: string;
     createdAt: Date;
     updatedAt: Date;
+}
+
+function format_data_for_datatable(rooms: Array<Room>) {
+  return {
+    headers: ["Name", "Capacity", "Is Occupied", "Location"],
+    body: rooms.map((room: Room) => [room.name, room.capacity, room.isOccupied, room.location]),
+  }
 }
 
 function Rooms() {
@@ -36,6 +38,7 @@ function Rooms() {
         createdAt: new Date(),
         updatedAt: new Date(),
     };
+
     const [ rooms, set_rooms ]                          = useState([dummy_room]);
     const [ add_room_popup, toggle_add_room_popup ]     = useState(false);
 
@@ -106,30 +109,8 @@ function Rooms() {
                     </FormControl>
                 </Box>
             </Modal>
-
-            <TableContainer component={Paper}>
-                <Table size="small">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Name</TableCell>
-                            <TableCell>Capacity</TableCell>
-                            <TableCell>Occupied</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {rooms.map((room: Room, key: number) => {
-                            return (<TableRow
-                                key={key}
-                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                >
-                                <TableCell component="th" scope="row">{room.name}</TableCell>
-                                <TableCell align="right">{room.capacity}</TableCell>
-                                <TableCell align="right">{(room.isOccupied) ? "Yes" : "No"}</TableCell>
-                            </TableRow>);
-                        })}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+            
+            <DataTable data={ format_data_for_datatable(rooms) }/>
         </Paper>
     );
 } export default Rooms;
