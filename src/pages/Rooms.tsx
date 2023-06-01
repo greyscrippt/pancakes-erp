@@ -42,9 +42,6 @@ function Rooms() {
     const [ rooms, set_rooms ]                          = useState([dummy_room]);
     const [ add_room_popup, toggle_add_room_popup ]     = useState(false);
 
-    const handle_add_room_popup_open    = () => toggle_add_room_popup( () => true  );
-    const handle_add_room_popup_cancel  = () => toggle_add_room_popup( () => false );
-
     const handle_add_room_popup_submit  = () => {
         set_rooms( (prev_rooms: any) => ([...prev_rooms, dummy_room]));
         toggle_add_room_popup( () => false );
@@ -56,7 +53,7 @@ function Rooms() {
 
             <Button
                 variant="contained"
-                onClick={handle_add_room_popup_open}
+                onClick={() => toggle_add_room_popup((prev_val: boolean) => !prev_val)}
                 >
                 Add
             </Button>
@@ -102,7 +99,7 @@ function Rooms() {
                           className="creator-modal-input"
                           color="secondary"
                           variant="contained"
-                          onClick={handle_add_room_popup_cancel}
+                          onClick={() => toggle_add_room_popup(() => false)}
                           >
                           Cancel
                         </Button>
