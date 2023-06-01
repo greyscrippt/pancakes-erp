@@ -7,13 +7,13 @@ interface NavbarLinkProps {
 }
 
 export default function NavbarLink(props: NavbarLinkProps) {
-  return(
-    <li>
-      <Link className="navbar-link" to={props.uri}>
-        <Button variant="contained">
-          {props.name}
-        </Button>
-      </Link>
-    </li>
-  );
+    return(
+        <li>
+            <Link className="navbar-link" to={props.uri}>
+                <Button variant="contained">
+                    {props.name}
+                </Button>
+            </Link>
+        </li>
+    );
 }
