@@ -14,6 +14,8 @@ import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 
+import "../styles.css";
+
 interface Room {
     name: string;
     capacity: number;
@@ -23,19 +25,6 @@ interface Room {
     createdAt: Date;
     updatedAt: Date;
 }
-
-const add_room_modal_style = {
-    position: 'absolute' as const,
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 'auto',
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    borderRadius: '14px',
-    boxShadow: 24,
-    p: 4,
-};
 
 function Rooms() {
     const dummy_room: Room = {
@@ -72,13 +61,48 @@ function Rooms() {
             <Modal
                 open={add_room_popup}
                 >
-                <Box sx={add_room_modal_style}>
+                <Box className="creator-modal-box">
                     <FormControl>
-                        <Typography variant="h6" sx={{ marginBottom:"18px" }}>Create new room</Typography>
-                        <TextField required type="text" color='primary' label="Name" sx={{ marginBottom:"15px" }}/>
-                        <TextField required type="number" color='primary' label="Capacity" sx={{ marginBottom:"15px" }}/>
-                        <Button sx={{ marginBottom:"10px" }} color="primary" variant="contained" onClick={handle_add_room_popup_submit}>Create</Button>
-                        <Button color="secondary" variant="contained" onClick={handle_add_room_popup_cancel}>Cancel</Button>
+                        <Typography
+                          variant="h6"
+                          className="creator-modal-input"
+                          >
+                          Create new room
+                        </Typography>
+                        
+                        <TextField
+                          required
+                          type="text"
+                          color='primary'
+                          label="Name"
+                          className="creator-modal-input"
+                          />
+                        
+                        <TextField
+                          required
+                          type="number"
+                          color='primary'
+                          label="Capacity"
+                          className="creator-modal-input"
+                          />
+                        
+                        <Button
+                          className="creator-modal-input"
+                          color="primary"
+                          variant="contained"
+                          onClick={handle_add_room_popup_submit}
+                          >
+                          Create
+                        </Button>
+                        
+                        <Button
+                          className="creator-modal-input"
+                          color="secondary"
+                          variant="contained"
+                          onClick={handle_add_room_popup_cancel}
+                          >
+                          Cancel
+                        </Button>
                     </FormControl>
                 </Box>
             </Modal>

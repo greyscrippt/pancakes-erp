@@ -69,3 +69,22 @@ body {
 .page td:hover {
     background-color: rgb(211, 209, 209);
 }
+
+.creator-modal-box {
+    position: absolute;
+    background-color: white;
+    padding: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    border-radius: 14px;
+    box-shadow: 24;
+}
+
+.creator-modal-input {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
