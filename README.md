@@ -2,12 +2,15 @@
 
 Software for managing lodging businesses.
 
-## To-Do
+## Small To-Do
+- [ ] Create component for 'Page'
+
+## General To-Do
 
 - [ ] User management system
- - [ ] Login
- - [ ] Registration
- - [ ] Access control
+- [ ] Login
+- [ ] Registration
+- [ ] Access control
 - [ ] Dashboard
 - [ ] Room reservation management system
 - [ ] Inventory and asset management system
