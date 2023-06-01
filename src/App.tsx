@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 import "./styles.css";
-import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+
+import NavbarLink from "./components/NavbarLink";
 
 function App() {
   return (
@@ -13,20 +13,8 @@ function App() {
         </Typography>
 
         <ul className="navbar-links">
-          <li>
-            <Link className="navbar-link" to="/">
-              <Button variant="contained">
-                Dashboard
-              </Button>
-            </Link>
-          </li>
-          <li>
-            <Link className="navbar-link" to="/rooms">
-              <Button variant="contained">
-                Rooms
-              </Button>
-            </Link>
-          </li>
+            <NavbarLink name="Dashboard" uri="/" />
+            <NavbarLink name="Rooms" uri="/rooms" />
         </ul>
       </nav>
 
