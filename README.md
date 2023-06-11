@@ -2,7 +2,14 @@
 
 Software for managing lodging businesses.
 
+## Design Principles
+
+- It should be blazingly fast, even under a weak network
+- It should be modular and flexible, allowing for quick changes
+- Each process should require as few steps as possible
+
 ## Small To-Do
+
 - [ ] Create component for 'Page'
 
 ## General To-Do
